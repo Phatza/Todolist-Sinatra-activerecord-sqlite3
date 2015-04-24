@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<h1>Todolist</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5">
+		<a class="btn btn-primary" data-toggle="collapse" href="#addtask" aria-expanded="false" aria-controls="collapseExample">
+  			Add task
+		</a>
+		<div class="collapse" id="addtask">
+  		<div class="well">
+  			<h2>New Task:</h2>
+  			<div class="has-success">
+			<form action="/todo" method="post" class="form-inline">
+				<input class="form-control" id="inputSuccess1" type="text" name="content" placeholder="ENTER A TASK">
+				<input type="submit" value="Add" class="btn btn-success">
+			</form>
+			</div>
+		</div>
+</div>
+	</div>
+</div>
+<!-- <a href="/search">You also can search your task here</a> -->
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Task</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<% @mydata.each do |data| %>
+				<tbody>
+					<tr>
+						<td> <%= data.id %></td>
+						<td> <%= data.content %> </td>
+						<td><a href="/edit/<%= data[:id] %>" class="btn btn-info">Edit</a></td>
+						<td><a href="/delete/<%= data[:id] %>" class="btn btn-danger">Delete</a></td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+		
+

@@ -1,0 +1,18 @@
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h1>Delete this task</h1>
+			<form action="/delete/<%= @donnees.id %>" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<blockquote><p class="bg-danger"> <%= @donnees.content %> </p></blockquote>
+				<div class="btn-group" role="group" aria-label="...">
+					<button class="btn btn-danger">Yes</button>
+			</form>
+					<a href="/"><button type="button" class="btn btn-danger">No!</button></a>
+			</div>
+		</div>
+	</div>
+
+
+
+  
